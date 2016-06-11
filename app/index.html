@@ -17,11 +17,22 @@
     <div ng-include="'dist/views/sidenav.html'" layout="vertical">
 
     </div>
-    <div layout="column" flex>
+    <div layout="column" flex id="wrapper">
         <div ng-include="'dist/views/toolbar-header.html'">
         </div>
         <md-content flex id="content">
-            Main Content
+            <div ng-include="'dist/views/main-content.html'">
+            </div>
+            <md-tabs selected="vm.tabIndex">
+                <md-tab label="Bio">
+                    <div ng-include="'dist/views/tab-bio.html'">
+                    </div>
+                </md-tab>
+                <md-tab label="Notes">
+                    <div ng-include="'dist/views/tab-notes.html'">
+                    </div>
+                </md-tab>
+            </md-tabs>
         </md-content>
     </div>
     <script src="./bower_components/angular/angular.js"></script>
@@ -29,6 +40,8 @@
     <script src="./bower_components/angular-aria/angular-aria.js"></script>
     <script src="./bower_components/angular-material/angular-material.js"></script>
     <script src="./bower_components/angular-material-icons/angular-material-icons.js"></script>
+    <script src="./dist/controllers/addUserDialogController.js"></script>
+    <script src="./dist/controllers/contactPanelController.js"></script>
     <script src="./dist/controllers/mainController.js"></script>
     <script src="./dist/services/userService.js"></script>
     <script src="./dist/boot.js"></script>
