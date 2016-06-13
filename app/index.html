@@ -23,7 +23,7 @@
         <md-content flex id="content">
             <div ng-include="'dist/views/main-content.html'">
             </div>
-            <md-tabs selected="vm.tabIndex">
+            <md-tabs md-dynamic-height="" md-stretch-tabs="always" selected="vm.tabIndex">
                 <md-tab label="Bio">
                     <div ng-include="'dist/views/tab-bio.html'">
                     </div>
@@ -35,14 +35,27 @@
             </md-tabs>
         </md-content>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyD9yx4Q_fFy1ptsBWd5sA0wrZnVkU8L-mk",
+            authDomain: "angularmaterialdemo.firebaseapp.com",
+            databaseURL: "https://angularmaterialdemo.firebaseio.com",
+            storageBucket: "angularmaterialdemo.appspot.com",
+        };
+        firebase.initializeApp(config);
+    </script>
     <script src="./bower_components/angular/angular.js"></script>
     <script src="./bower_components/angular-animate/angular-animate.js"></script>
     <script src="./bower_components/angular-aria/angular-aria.js"></script>
     <script src="./bower_components/angular-material/angular-material.js"></script>
+    <script src="./bower_components/angular-messages/angular-messages.js"></script>
     <script src="./bower_components/angular-material-icons/angular-material-icons.js"></script>
     <script src="./dist/controllers/addUserDialogController.js"></script>
     <script src="./dist/controllers/contactPanelController.js"></script>
     <script src="./dist/controllers/mainController.js"></script>
+    <script src="./dist/models.js"></script>
     <script src="./dist/services/userService.js"></script>
     <script src="./dist/boot.js"></script>
 </body>
